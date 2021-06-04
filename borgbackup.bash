@@ -29,7 +29,7 @@ systemctl stop mnt.mount
 SUBJECT="domain.com BorgBackup notification"
 
 /usr/sbin/ssmtp -t << EOF
-To: email@domain.com
+To: email@example.com
 Subject: $SUBJECT
 
 $MSG
