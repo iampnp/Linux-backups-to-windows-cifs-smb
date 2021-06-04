@@ -1,0 +1,13 @@
+[Unit]
+  Description=cifs mount script
+  Requires=network-online.target
+  After=network-online.service
+
+[Mount]
+  What=
+  Where=/mnt/
+  Options=credentials=/etc/win-credentials,rw
+  Type=cifs
+
+[Install]
+  WantedBy=multi-user.target
