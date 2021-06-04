@@ -1,0 +1,8 @@
+wget https://raw.githubusercontent.com/iampnp/Linux-backups-to-windows-cifs-smb/main/systemctl-mount-cifs -O /etc/systemd/system/mnt.mount
+wget https://raw.githubusercontent.com/iampnp/Linux-backups-to-windows-cifs-smb/main/systemctl-mount-cifs-win-credentials -O /etc/win-credentials
+sed -i -e 's+What=+What=//x.x.x.x/FolderPath+g' /etc/systemd/system/mnt.mount
+sed -i -e 's+username=+username=username+g' /etc/win-credentials
+sed -i -e 's+password=+password=password123+g' /etc/win-credentials
+systemctl daemon-reload
+systemctl start mnt.mount
+systemctl stop mnt.mount
